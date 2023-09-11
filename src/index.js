@@ -1,8 +1,8 @@
-const express = require("express")
+const express = require("express");
 const bodyParser = require("body-parser")
 
-const CityRepository = require('./repository/cityRepository')
 const {PORT} = require('./config/serverConfig')
+const ApiRoutes = require('./routes/index');
 
 const setupandStartServer = async ()=>{
     
@@ -10,6 +10,8 @@ const setupandStartServer = async ()=>{
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
+
+    app.use('/api', ApiRoutes);
     
     app.listen(PORT, ()=>{
         console.log(`Server started at ${PORT}`)
