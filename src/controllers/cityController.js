@@ -22,6 +22,26 @@ const create = async (req,res)=> {
     }
 }
 
+const createMultiple = async (req,res)=> {
+    try {
+        const cities = await cityService.createMultipleCities(req.body);
+        return res.status(201).json({
+            data: cities,
+            success: true,
+            message:'successfully created cities',
+            err: {}
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message:'not able to create  cities',
+            err: error
+        }); 
+    }
+}
+
 const update = async (req,res)=> {
     try {
         const response = await cityService.updateCity(req.params.id,req.body);
@@ -105,5 +125,6 @@ module.exports = {
     destroy,
     update,
     get,
-    getAll
+    getAll,
+    createMultiple
 }

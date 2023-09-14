@@ -16,24 +16,28 @@ module.exports = {
       {
        name: 'a1',
        cityId: 1,
+       address:null,
        createdAt: new Date(),
        updatedAt: new Date()
       },
       {
         name: 'a2',
         cityId: 1,
+        address:null,
         createdAt: new Date(),
         updatedAt: new Date()
        },
        {
         name: 'a3',
         cityId: 1,
+        address:null,
         createdAt: new Date(),
         updatedAt: new Date()
        },
        {
         name: 'a1',
         cityId: 2,
+        address:null,
         createdAt: new Date(),
         updatedAt: new Date()
        }

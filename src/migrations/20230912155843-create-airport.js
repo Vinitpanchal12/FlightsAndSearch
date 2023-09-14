@@ -11,10 +11,12 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull:false
+        allowNull:false,
+        unique:true
       },
       address: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        
       },
       cityId: {
         type: Sequelize.INTEGER,
@@ -22,7 +24,7 @@ module.exports = {
         references:{
           model:'Cities',
           key:'id',
-          as:'cityID'
+          as:'cityId'
         },
         allowNull:false
       },
