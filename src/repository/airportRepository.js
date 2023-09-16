@@ -10,7 +10,6 @@ class AirportRepository{
         }
     }
 
-
     async getAirport(airportId){
         try {
             const airport = await Airport.findByPk(airportId);
