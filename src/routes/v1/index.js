@@ -20,6 +20,7 @@ router.get('/airport/:id', AirportController.get);
 router.delete('/airport/:id', AirportController.destroy);
 router.patch('/airport/:id', AirportController.update);
 
+
 router.post(
     '/flights',
     FlightMiddleware.validateCreateFlight,
@@ -27,6 +28,7 @@ router.post(
     );
 router.get('/flights/:id', FlightController.get);
 router.get('/flights',FlightController.getAll);
+router.patch('/flights/:id',FlightController.update);
 
 
 module.exports = router;

@@ -54,14 +54,19 @@ class FlightRepository{
             throw{error};
         }
     }
-    // async updateFlight(data){
-    //     try {
-    //         const flight = await Flights.create(data);
-    //         return flight;
-    //     } catch (error) {
-    //         throw{error};
-    //     }
-    // }
+    async updateFlight(flightId,data){
+        try {
+            const flight = await Flights.update(data,{
+               where:{
+                   id: flightId
+               }
+            });
+           return true;
+       } catch (error) {
+            console.log('something wrong at repo');
+            throw {error};
+       }
+    }
     // async deleteFlight(data){
     //     try {
     //         const flight = await Flights.create(data);
